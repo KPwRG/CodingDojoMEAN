@@ -126,26 +126,84 @@ function generateCoinChange(cents) {
     }
     while (cents >= 100) {
         cents -= 100;
-        change.Dollars ++;
+        change.Dollars++;
     }
     while (cents >= 25) {
         cents -= 25;
-        change.Quarters ++;
+        change.Quarters++;
     }
     while (cents >= 10) {
         cents -= 10;
-        change.Dimes ++;
+        change.Dimes++;
     }
     while (cents >= 5) {
         cents -= 5;
-        change.Nickels ++;
+        change.Nickels++;
     }
     while (cents > 0) {
         cents -= 1;
-        change.Pennies ++;
+        change.Pennies++;
     }
     return change
 }
 
 console.log(generateCoinChange(33))
+
+
+// Write a function called userLanguages that accepts an array of users, such as the one shown above. Return a string that lists all the users by first name and last name and the languages that each user knows. Make the string as nicely formatted as possible so that it is easy to read.
+// Example: userLanguages(users) returns
+// Kermit the Frog knows Python, JavaScript, C#, HTML, CSS, and SQL. 
+// Winnie the Pooh knows Python, Swift, and Java. 
+// Arthur Dent knows JavaScript, HTML, and Go.
+// BONUS: Adjust the userLanguages function to also include what each user's interests are.
+// Example: userLanguages(users) returns
+// Kermit the Frog knows Python, JavaScript, C#, HTML, CSS, and SQL.
+// Kermit is also interested in guitar, flute, tap, salsa, Black Mirror, and Stranger Things.
+// Winnie the Pooh knows Python, Swift, and Java. 
+// Winnie is also interested in honey, honeycomb, honeysuckle, and Heffalumps.
+// Arthur Dent knows JavaScript, HTML, and Go.
+// Arthur is also interested in stars, planets, improbability, tea, and yellow bulldozers.
+
+users = [
+    {
+        fname: "Kermit",
+        lname: "the Frog",
+        languages: ["Python", "JavaScript", "C#", "HTML", "CSS", "SQL"],
+        interests: {
+            music: ["guitar", "flute"],
+            dance: ["tap", "salsa"],
+            television: ["Black Mirror", "Stranger Things"]
+        }
+    },
+    {
+        fname: "Winnie",
+        lname: "the Pooh",
+        languages: ["Python", "Swift", "Java"],
+        interests: {
+            food: ["honey", "honeycomb"],
+            flowers: ["honeysuckle"],
+            mysteries: ["Heffalumps"]
+        }
+    },
+    {
+        fname: "Arthur",
+        lname: "Dent",
+        languages: ["JavaScript", "HTML", "Go"],
+        interests: {
+            space: ["stars", "planets", "improbability"],
+            home: ["tea", "yellow bulldozers"]
+        }
+    }
+]
+function nameAndLang(arr) {
+    var usersNameLang = [];
+    for (i = 0; i < arr.length; i ++) {
+        usersNameLang.push(arr[i].fname);
+        usersNameLang.push(arr[i].lname);
+        usersNameLang.push(arr[i].languages);
+    }
+    return usersNameLang.join();
+}
+
+console.log(nameAndLang(users));
 
