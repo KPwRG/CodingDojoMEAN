@@ -87,3 +87,28 @@ function selectionSort(array) {
 console.log(selectionSort(array));
 
 // SList: Selection Sort Create a function that sorts a singly linked list using selection sort. Nodes contain .val, .next and other attributes you should not reference.
+
+
+// Array: Merge Sort
+// Use the combineArrrs() function to construct mergeSortArr() for an unsorted array.
+
+
+var arr = [23, 56, 8, 75, 5, 1, 99, 43, 88, 11];
+
+function mergeSortArr(arr){
+    if (arr.length <= 1){
+        return arr;
+    }
+    var mid = Math.floor(arr.length/2);
+    var left = mergeSortArr(arr.slice(0,mid));
+    var right = mergeSortArr(arr.slice(mid));
+    return combineArrs(left, right)
+
+}
+
+function combineArrs(arr1, arr2){
+    
+}
+console.log(combineArrs());
+
+mergeSortArr(arr);
